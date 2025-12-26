@@ -104,3 +104,11 @@ function brew(order: MasalaChai | GingerChai) {
     return `Its a MasalaChai order`; // but no auto suggestions when doing order.
   }
 }
+
+// datatype:  Unknown
+
+// if you give unknown type to a variable then before using it or
+//  assigning it or before defining any properties in it you should
+// give other types to it (other than unknown). you have to tell the
+//  ide which type the varible or that property of that varible will
+//  be in place of unkown before using it
