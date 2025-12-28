@@ -68,14 +68,14 @@ function isChaiOrder(obj: any): obj is ChaiOrder {
 
 function serveItem(item: ChaiOrder | string) {
   if (isChaiOrder(item)) {
-    return item.sugar; // auto suggestion for its methods // the ide knows its properties are taste and sugar
+    return `${item.taste} and ${item.sugar}`; // auto suggestion for its methods // the ide knows its properties are taste and sugar
   }
   return `serving ${item}`;
 }
 let item: ChaiOrder = { taste: "yummy", sugar: 3 };
 console.log(serveItem(item));
 
-//interesting way of using type in industry
+//interesting way of using type in industry imp for understanding
 type MasalaChai = { taste: "masala"; spiceLevel: number };
 type GingerChai = { taste: "ginger"; amount: number };
 type ElaichiChai = { taste: "elaichi"; aroma: number };
@@ -85,23 +85,23 @@ type chai = MasalaChai | GingerChai | ElaichiChai;
 function MakeChai(order: chai) {
   switch (order.taste) {
     case "masala":
-      return `making Masala chai`;
+      return `making Masala chai with spiceLevel ${order.spiceLevel}`;
       break;
     case "ginger":
-      return `making Ginger chai`;
+      return `making ${order.amount} Ginger chais `;
       break;
     case "elaichi":
-      return `making Elaichi chai`;
+      return `making Elaichi chai with ${order.aroma} level of aroma`;
       break;
   }
 }
-let order: chai = { taste: "ginger", amount: 5 };
+let order: chai = { taste: "ginger", amount: 5 }; // NOTE: both the properties should be there or else it will give an error
 console.log(MakeChai(order));
 
 //checking specific properties to determine the type
 function brew(order: MasalaChai | GingerChai) {
   if ("spiceLevel" in order) {
-    return `Its a MasalaChai order`; // but no auto suggestions when doing order.
+    return `Its a MasalaChai order with spiceLevel ${order.spiceLevel}`; // We get auto suggestion while doing this
   }
 }
 
