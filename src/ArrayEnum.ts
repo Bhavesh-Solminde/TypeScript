@@ -22,6 +22,9 @@ menu.push({ name: "Lemon", price: 40 });
 const cities: readonly string[] = ["Mumbai", "Delhi"];
 // cities.push("Pune") //This is not possible because of readonly
 
+//Named array
+const chaiItems: [name: string, price: number] = ["Masala", 34];
+
 //multi-dimensional array
 const table: number[][] = [
   [3, 4, 5],
@@ -35,8 +38,6 @@ chaiTuple: chaiTuple = ["Masala", 20];
 
 //readonly tuples
 const location2: readonly [number, number] = [28.6, 32.7];
-
-const chaiItems: [name: string, price: number] = ["Masala", 34];
 
 //
 //Enums
