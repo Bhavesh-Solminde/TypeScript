@@ -75,3 +75,4 @@ const enum Sugar {
 //Every Buggy code
 const t: [number, string] = [10, "Chai"];
 t.push("pandu"); //This gives error because we can only have 2 values in the array 1 number other string
+//Therefore avoid this
