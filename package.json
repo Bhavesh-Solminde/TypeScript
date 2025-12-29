@@ -1,10 +1,8 @@
 {
   "dependencies": {
-    "axios": "^1.13.2",
     "init": "^0.1.2"
   },
   "devDependencies": {
-    "@types/axios": "^0.9.36",
     "typescript": "^5.9.3"
   },
   "name": "typescript",
@@ -16,7 +14,6 @@
   },
   "keywords": [],
   "author": "",
-  "type": "module",
   "license": "ISC",
   "description": ""
 }
