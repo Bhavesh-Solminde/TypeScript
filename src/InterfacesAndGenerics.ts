@@ -63,7 +63,7 @@ interface User {
 }
 const u: User = {
   name: "Opus",
-  //we can see that it is not satisfied by only name, it also needs the price
+  //we can see that it is not satisfied by only name it also needs the price
   price: 40,
 };
 //Therefore we can say that they merge
@@ -93,7 +93,7 @@ interface A {
 interface B {
   b: string;
 }
-interface C extends A, B {} // That means the object with type C should have property a and b too
+interface C extends A, B {}
 
 //
 
@@ -118,57 +118,3 @@ interface C extends A, B {} // That means the object with type C should have pro
 //
 
 //Generics
-// Generics let you define a type once and make a function, class, or object return or use that exact same type safely.
-function wrapInArray<T>(item: T): T[] {
-  return [item];
-}
-
-wrapInArray("masala");
-wrapInArray(42);
-wrapInArray({ flavor: "Ginger" });
-
-function pair<A, B>(a: A, b: B): [A, B] {
-  let c = 0;
-  return [a, b]; // this should be [b,a]. Order,quantity and type matters
-}
-
-//Usage
-console.log(pair("Masala", "Ginger")); // will return a array of both the strings
-//we can also do
-pair("masala", { flavor: "ginger" });
-pair("Masala", 45);
-
-// Making genric interfaces
-interface Box<T> {
-  content: T;
-}
-const numberBox: Box<number> = { content: 10 }; // if not number then this will give an error
-const numberBox2: Box<{ title: string }> = {
-  content: { title: "TypeScript" },
-};
-
-// In realWOrld it is used in ApiResponses, formstate (in React), etc
-
-interface ApiResponse<T> {
-  status: number;
-  message: string;
-  data: T;
-}
-interface User2 {
-  username: string;
-  email: string;
-  resumeText: string;
-  atsScore: number;
-}
-const res: ApiResponse<{ user: User2 }> = {
-  status: 201,
-  message: "User created successfully",
-  data: {
-    user: {
-      username: "Bhavesh",
-      email: "abd@gmail.com",
-      resumeText: "adfasdg",
-      atsScore: 99,
-    },
-  },
-};
