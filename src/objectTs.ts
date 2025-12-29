@@ -48,7 +48,7 @@ type User = {
 };
 const u: User = {
   username: "Bhavesh",
-  password: "123", // here its important to give both the properties. It can be more than this but not less than this
+  password: "123", // here its important to give both the properties. It can't be more or less than this but we can increase it by making another object and then applying that to this object
 };
 
 //spilting out datatypes
